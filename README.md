@@ -7,7 +7,17 @@ Maked following this [tutorial](https://devaprender.com/como-criar-um-bot-no-wha
 
 ### How to Use
 ---
-- Open a terminal, and run:
+- Open a terminal, and run the comands below to install dependencies:
+
+```
+pip install selenium
+```
+
+```
+pip install webdriver_manager
+```
+
+- Now, run the comand to start the app: 
 ```
 py app.py 'yourMessage' hasEmoticon
 ```
