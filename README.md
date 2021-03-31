@@ -5,13 +5,18 @@
 
 Maked following this [tutorial](https://devaprender.com/como-criar-um-bot-no-whatsapp)
 
-### Open a terminal, and run:
+### How to Use
+---
+- Open a terminal, and run:
 ```
-py app.py
+py app.py 'yourMessage' hasEmoticon
 ```
-
-It will open a Chrome page, and request your authenticatin by QrCode.
+```yourMessage:``` The message that you want to send. It need to be between '' to represent a string
 <br>
+<br>
+```hasEmoticon:``` If message has a emoticon code, this value need to be True
+
+The command will open a Chrome page, and request your authenticatin by QrCode.
 <br>
 Make the atutentication and wait for the ```show``` !!! 
 
