@@ -11,11 +11,12 @@ Maked following this [tutorial](https://devaprender.com/como-criar-um-bot-no-wha
 ```
 py app.py 'yourMessage' hasEmoticon
 ```
-#### - yourMessage: The message that you want to send. It need to be between '' to represent a string
-#### - hasEmoticon: If message has a emoticon code, this value need to be True
+```yourMessage:``` The message that you want to send. It need to be between '' to represent a string
+<br>
+<br>
+```hasEmoticon:``` If message has a emoticon code, this value need to be True
 
 The command will open a Chrome page, and request your authenticatin by QrCode.
-<br>
 <br>
 Make the atutentication and wait for the ```show``` !!! 
 
