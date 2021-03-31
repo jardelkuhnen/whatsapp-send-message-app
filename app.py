@@ -1,4 +1,5 @@
 import time
+import sys
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -8,8 +9,22 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 
 driver.get('https://web.whatsapp.com')
 
-contacts = ['Bianca Schmitt']
-message = 'Fala comigo bebe, o BOT :smile'
+contacts = ['Bianca Schmitt', 'Vo Braganey', 'Vó Braganey', 'Mãe tim', 'Pai Tim']
+contains_emoticon = True
+
+messageInput = sys.argv[1]
+print('Message: ', messageInput)
+
+if not messageInput:
+    message = 'Boom dia :finger'
+else:
+    message = messageInput     
+    
+
+if not sys.argv[2]:
+    contains_emoticon = False
+else:
+    contains_emoticon = True
 
 time.sleep(5)
 
@@ -41,7 +56,7 @@ for contact in contacts:
     
     time.sleep(5)
     
-    send_message(message, True)
+    send_message(message, contains_emoticon)
 
 
 
