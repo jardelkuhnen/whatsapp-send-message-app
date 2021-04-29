@@ -9,7 +9,8 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 
 driver.get('https://web.whatsapp.com')
 
-contacts = ['Bianca Schmitt', 'Vo Raiberto Braganey', 'Vó Delaria Braganey', 'Mãe tim', 'Pai Tim']
+#contacts = ['Bianca Schmitt', 'Vo Raiberto Braganey', 'Vó Delaria Braganey', 'Mãe tim', 'Pai Tim']
+contacts = ['Bianca Schmitt']
 contains_emoticon = True
 
 messageInput = sys.argv[1]
@@ -26,7 +27,7 @@ if not sys.argv[2]:
 else:
     contains_emoticon = True
 
-time.sleep(5)
+time.sleep(2)
 
 def find_contact(contact):
     field_search = driver.find_element_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
@@ -43,10 +44,10 @@ def send_message(message, contains_emoticon: bool):
     field_search.click()
     field_search.send_keys(message)
 
-    time.sleep(5)
+    time.sleep(2)
 
     field_search.send_keys(Keys.ENTER)
-    time.sleep(5)
+    time.sleep(2)
     if contains_emoticon:
         field_search.send_keys(Keys.ENTER)
 
@@ -54,10 +55,13 @@ def send_message(message, contains_emoticon: bool):
 for contact in contacts:
     find_contact(contact)
     print("Contato encontrado: ", contact)    
-    time.sleep(5)
-    send_message(message, contains_emoticon)
-    print("Enviando menssagem para: ", contact) 
+    time.sleep(2)
+    for x in range(20):
+        time.sleep(2)
+        send_message(message, contains_emoticon)
+        print("Enviando menssagem para: ", contact) 
 
+    print("For finalizado")
 
 
 
